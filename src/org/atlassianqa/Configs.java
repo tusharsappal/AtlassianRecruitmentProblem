@@ -1,13 +1,13 @@
 package org.atlassianqa;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class Configs {
 
 	public static String HOMEPAGE_URL = "https://tusharsappal.atlassian.net/";
 	public static String USERNAME = "sappal.tushar@gmail.com";
 	private static String PASSWORD = "Accompany123";
-	private static String LOGINPAGE_TITLE = "Atlassian Cloud";
-	private static String HOMEPAGE_TITLE = "Dashboard - Confluence";
-	private static String NEWPAGE_TITLE = "Add Page - TestSpace - Confluence";
+	private static String NEW_PAGE_TITLE= RandomStringUtils.randomAlphanumeric(20).toLowerCase()
+			+"_sample_test_page";
 
 
 	public static String getPASSWORD() {
@@ -35,17 +35,8 @@ public class Configs {
 	{
 		HOMEPAGE_URL = newHOMEPAGEURL;
 	}
-
-	public static String getLOGINPAGETITLE() {
-		return LOGINPAGE_TITLE;
-	}
-
-	public static String getHOMEPAGETITLE() {
-		return HOMEPAGE_TITLE;
-	}
 	
-	public static String getNEWPAGETITLE() {
-		return NEWPAGE_TITLE;
-		
+	public static String getNewPageTitle() {
+		return NEW_PAGE_TITLE;		
 	}
 }

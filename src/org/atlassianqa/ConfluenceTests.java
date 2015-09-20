@@ -8,6 +8,7 @@ public class ConfluenceTests {
 
 	public static void main(String[] args) {
 
+		boolean isNewPageCreated = false;
 		// Initializing the WebDriver 
 		WebDriver driver = new FirefoxDriver();
 
@@ -32,7 +33,22 @@ public class ConfluenceTests {
 		 * presence in the list of the pages listed  
 		 */
 		confluenceHomePage.clickOnCreateButton();
-
+		
+		ConfluenceNewPageObjects newPage = new ConfluenceNewPageObjects(driver);
+		// We are creating a new page with the title and leaving the page contents as blank
+		isNewPageCreated = newPage.createNewPage(Configs.getNewPageTitle());
+		
+		// Checking if the new page is created or not 
+		
+		if (isNewPageCreated == true)
+		{
+			System.out.println("The New Page Creation Test Case has Passed");			
+		}
+		else
+		{
+			System.out.println("The New Page Creation Test has failed");
+		}
+		
 	}
 
 }

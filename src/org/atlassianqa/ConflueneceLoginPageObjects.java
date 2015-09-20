@@ -11,7 +11,7 @@ public class ConflueneceLoginPageObjects {
 
 		PageFactory.initElements(driver, this);
 		// Check that we're on the right page.
-		if (!(Configs.getLOGINPAGETITLE().equals(driver.getTitle()))) {
+		if (!"Atlassian Cloud".equals(driver.getTitle())) {
 			// Alternatively, we could navigate to the login page, perhaps logging out first
 			throw new IllegalStateException("This is not the login page");
 		}
