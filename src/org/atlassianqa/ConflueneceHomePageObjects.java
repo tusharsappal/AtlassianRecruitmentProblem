@@ -12,5 +12,4 @@ public class ConflueneceHomePageObjects {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
 }

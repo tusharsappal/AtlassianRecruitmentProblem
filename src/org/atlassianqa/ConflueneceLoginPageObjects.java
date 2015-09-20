@@ -6,10 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ConflueneceLoginPageObjects {
-
+	
 	public ConflueneceLoginPageObjects(WebDriver driver) {
 
 		PageFactory.initElements(driver, this);
+		// Check that we're on the right page.
+        if (!Configs.getLOGINPAGETITLE().equals(driver.getTitle())) {
+            // Alternatively, we could navigate to the login page, perhaps logging out first
+            throw new IllegalStateException("This is not the login page");
+        }
 	}
 
 	// Grabbing the UserName Text Field 
@@ -32,7 +37,5 @@ public class ConflueneceLoginPageObjects {
 		loginButton.click();
 
 	}
-
-
-
+	
 }
