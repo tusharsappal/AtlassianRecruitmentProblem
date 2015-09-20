@@ -20,3 +20,7 @@
 1. The Dialogs should be opened within 15 minutes, since we have set the explicit timeout to be 15 seconds
 2. The Page opened should be rendered within 15 minutes , since we have set the explicit timeout to be 15 seconds
 3. The options , menus and the pages should be opened using a single click , logic for trying opening the page with the multiple attempts is not written
+
+####Contributors
+
+1. Tushar Sappal
