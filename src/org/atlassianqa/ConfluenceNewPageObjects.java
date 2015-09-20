@@ -7,8 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ConfluenceNewPageObjects {
 
+	WebDriver driver;
 	public ConfluenceNewPageObjects(WebDriver driver) {
 
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		if (!"Add Page - TestSpace - Confluence".equals(driver.getTitle())) {
 			// Alternatively, we could navigate to the login page, perhaps logging out first
@@ -25,10 +27,21 @@ public class ConfluenceNewPageObjects {
 	private WebElement saveButton;		
 
 	public boolean createNewPage(String pageTitle) {
+
 		boolean isPageCreated = false;
 		blankPageTitleTextField.sendKeys(pageTitle);
 		saveButton.click();
-		isPageCreated = true;
+		// We will check if we are redirected to the DashBoard
+		// This signifies that we have successfully created the Page
+		if (!"Dashboard - Confluence".equals(driver.getTitle())) {
+			// Alternatively, we could navigate to the login page, perhaps logging out first
+			isPageCreated = false;
+			throw new IllegalStateException("This is not the login page");
+		}
+		// Else if we have landed to the Dashboard Page , we have successfully created the Page
+		else {
+			isPageCreated = true;
+		}
 		return isPageCreated;
 	}
 
