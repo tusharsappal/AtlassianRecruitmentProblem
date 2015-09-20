@@ -62,9 +62,16 @@ public class ConfluencePopulatedPageObjects {
 		clickActionMenuLink();
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		restrctionsLink.click();
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);		
 		
-		
+	}
+	
+	public boolean isEditConfluencerPageButtonVisible() {
+		return editPageLink.isDisplayed();
+	}
+	
+	public String getPageTitle() {
+		return driver.getTitle();
 	}
 
 }

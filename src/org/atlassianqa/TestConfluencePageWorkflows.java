@@ -28,7 +28,7 @@ public class TestConfluencePageWorkflows {
 
 		confluenceLogin.login(Configs.getUSERNAME(), Configs.getPASSWORD());
 
-		// TODO:- Adding a method to signify that the user is actually logged in the webportal
+		// TODO:- Adding a method to signify that the user is actually logged in the web portal
 
 		/*We are now logged in , we will be checking the Landing Page (Home Page ), title etc to see if 
 		 we have landed on the correct page */
@@ -68,12 +68,13 @@ public class TestConfluencePageWorkflows {
 		driver.close();
 	}
 
-
-
+	
 	// This method will check the restriction workflow
 	@Test
 	public void testRestrictionsWorkflows() {
-
+        
+		boolean isRestrcitionsDialogVisible = false;
+		
 		// Initializing the WebDriver 
 		WebDriver driver = new FirefoxDriver();
 
@@ -89,6 +90,22 @@ public class TestConfluencePageWorkflows {
 		
 		confPopulated.clickRestrictionsLink();
 		
+		ConfluencePageRestrcitionsObjects confRestrict = new ConfluencePageRestrcitionsObjects(driver);
+		
+		isRestrcitionsDialogVisible = confRestrict.isRestrcitionsDialogOptionsVisible();
+		
+		if (isRestrcitionsDialogVisible == false) {
+			Assert.fail("The Restrcitions Dialog did not opened for this user");
+		}
+		else
+		{
+			confRestrict.closeRestrictionDialog();
+			// We will verify that we land to the page itself after the restrcitions dialog is closed
+			// We will be verifyig this by verifying the presence of the Edit Button and the Page Title
+			confPopulated.isEditConfluencerPageButtonVisible();
+			
+		}
+	
 	}
 
 }
