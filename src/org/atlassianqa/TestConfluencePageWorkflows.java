@@ -9,6 +9,7 @@ import org.junit.Assert;
 
 public class TestConfluencePageWorkflows {
 
+	// This Method will check the new Page Creation Workflow
 	@Test
 	public void testNewConfluenecePageCreation() {
 
@@ -21,7 +22,7 @@ public class TestConfluencePageWorkflows {
 
 		// Navigating to the Login Page
 		driver.navigate().to(Configs.getHOMEPAGEURL());
-		
+
 		// Grabbing hold of all the page objects and the service methods provided by the LoginPage
 		ConflueneceLoginPageObjects confluenceLogin = new ConflueneceLoginPageObjects(driver);
 
@@ -37,20 +38,20 @@ public class TestConfluencePageWorkflows {
 		 * We will be creating a page with the title only and will see if we are successfully redirected
 		 * to the DashBoard Page , as all the Page creation workflow end up taking the user on the Dashboard page  
 		 */
-		
+
 		//Grabbing hold of all the page objects from the Confluence HomePage
 
 		ConflueneceHomePageObjects confluenceHomePage = new ConflueneceHomePageObjects(driver);
 		isNewPageCreationButtonVisible = confluenceHomePage.isCreateButtonVisible();
-		
+
 		// We will click on the create button only if the Create Button is visible
-		
+
 		if (isNewPageCreationButtonVisible == true) {
-			
+
 			confluenceHomePage.clickOnCreateButton();
-			
+
 			ConfluenceNewPageObjects newPage = new ConfluenceNewPageObjects(driver);
-			
+
 			// We are creating a new page with the title and leaving the page contents as blank
 			isNewPageCreated = newPage.createNewPage(Configs.getNewPageTitle());
 
@@ -59,10 +60,30 @@ public class TestConfluencePageWorkflows {
 				Assert.fail("The New Confluenece Page was not created");
 			}
 		}
-		
+
 		else {
 			Assert.fail("The Create Button is not visible");
 		}
+
+		driver.close();
+	}
+
+
+
+	// This method will check the restriction workflow
+	@Test
+	public void testRestrictionsWorkflows() {
+
+		// Initializing the WebDriver 
+		WebDriver driver = new FirefoxDriver();
+
+		// Navigating to the Existing Page URL
+		driver.navigate().to(Configs.getExistingPageURL());
+
+		// Grabbing hold of all the page objects and the service methods provided by the LoginPage
+		ConflueneceLoginPageObjects confluenceLogin = new ConflueneceLoginPageObjects(driver);
+
+		confluenceLogin.login(Configs.getUSERNAME(), Configs.getPASSWORD());
 	}
 
 }

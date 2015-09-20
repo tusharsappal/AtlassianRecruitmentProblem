@@ -8,6 +8,7 @@ public class Configs {
 	private static String PASSWORD = "Accompany123";
 	private static String NEW_PAGE_TITLE= RandomStringUtils.randomAlphanumeric(20).toLowerCase()
 			+"_sample_test_page";
+	private static String EXISTING_PAGE_URL = "https://tusharsappal.atlassian.net/wiki/display/TES/Sample+Test+Page";
 
 	public static String getPASSWORD() {
 		return PASSWORD;
@@ -36,5 +37,9 @@ public class Configs {
 
 	public static String getNewPageTitle() {
 		return NEW_PAGE_TITLE;	
+	}
+	
+	public static String getExistingPageURL() {
+		return EXISTING_PAGE_URL;
 	}
 }

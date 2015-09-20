@@ -42,9 +42,6 @@ public class ConfluenceNewPageObjects {
 		if (!webPageTitle.equals(driver.getTitle())) {
 			isPageCreated = false;
 			
-			System.out.println("Expected title is "+ webPageTitle);
-			System.out.println("Actual title is "+ driver.getTitle());
-			
 			throw new IllegalStateException("The Page has not been created successfully ");
 		}
 		else {
