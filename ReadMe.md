@@ -10,7 +10,13 @@
 
 1. An account on Confluence
 2. A Test Space on the Confluence Cloud
-3. The user should have admin / author rights on the Test Space
-4. For Testing the restriction workflow , a test page should be present under the space
+3. The user should have Administrator / Author rights on the Test Space
+4. For Testing the restriction work-flow , a test page should be present under the space
 5. The Selenium Jars should be bundled with the Project , in the build path
 6. The J-Unit Jars should be bundled with the project , in the build path
+
+####Assumptions
+
+1. The Dialogs should be opened within 15 minutes, since we have set the explicit timeout to be 15 seconds
+2. The Page opened should be rendered within 15 minutes , since we have set the explicit timeout to be 15 seconds
+3. The options , menus and the pages should be opened using a single click , logic for trying opening the page with the multiple attempts is not written
