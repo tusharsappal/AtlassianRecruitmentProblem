@@ -9,7 +9,6 @@ public class Configs {
 	private static String NEW_PAGE_TITLE= RandomStringUtils.randomAlphanumeric(20).toLowerCase()
 			+"_sample_test_page";
 
-
 	public static String getPASSWORD() {
 		return PASSWORD;
 	}
@@ -31,12 +30,11 @@ public class Configs {
 		return HOMEPAGE_URL;
 	}
 
-	public static void setHOMEPAGEURL(String newHOMEPAGEURL)
-	{
+	public static void setHOMEPAGEURL(String newHOMEPAGEURL){
 		HOMEPAGE_URL = newHOMEPAGEURL;
 	}
-	
+
 	public static String getNewPageTitle() {
-		return NEW_PAGE_TITLE;		
+		return NEW_PAGE_TITLE;	
 	}
 }
