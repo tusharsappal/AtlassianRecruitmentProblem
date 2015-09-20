@@ -13,7 +13,7 @@ public class TestConfluencePageWorkflows {
 	@Test
 	public void testNewConfluenecePageCreation() {
 
-		// Asigning the default values to the checks
+		// Assigning the default values to the checks
 		boolean isNewPageCreated = false;
 		boolean isNewPageCreationButtonVisible = false;
 
@@ -84,6 +84,11 @@ public class TestConfluencePageWorkflows {
 		ConflueneceLoginPageObjects confluenceLogin = new ConflueneceLoginPageObjects(driver);
 
 		confluenceLogin.login(Configs.getUSERNAME(), Configs.getPASSWORD());
+		
+		ConfluencePopulatedPageObjects confPopulated =  new ConfluencePopulatedPageObjects(driver);
+		
+		confPopulated.clickRestrictionsLink();
+		
 	}
 
 }
