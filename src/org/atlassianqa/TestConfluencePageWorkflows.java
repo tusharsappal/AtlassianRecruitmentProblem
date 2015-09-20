@@ -66,13 +66,13 @@ public class TestConfluencePageWorkflows {
 		driver.close();
 	}
 
-	
+
 	// This method will check the restriction workflow
 	@Test
 	public void testRestrictionsWorkflows() {
-        
-		boolean isRestrcitionsDialogVisible = false;
-		
+
+		boolean isRestrcitionDialogOptionsVisible = false;
+
 		// Initializing the WebDriver 
 		WebDriver driver = new FirefoxDriver();
 
@@ -82,17 +82,23 @@ public class TestConfluencePageWorkflows {
 		// Grabbing hold of all the page objects and the service methods provided by the LoginPage
 		ConflueneceLoginPageObjects confluenceLogin = new ConflueneceLoginPageObjects(driver);
 
+		// Fetching the Credentials from the Config file , we will try logging in 
 		confluenceLogin.login(Configs.getUSERNAME(), Configs.getPASSWORD());
-		
+
+		// TODO :- Add a method that would be used to verify that the user is successfully logged in
+
+		// Grabbing all the Objects of the Existing Page in Conflunece 		
 		ConfluencePopulatedPageObjects confPopulated =  new ConfluencePopulatedPageObjects(driver);
-		
+
+
 		confPopulated.clickRestrictionsLink();
-		
+
+		// Grabbing all the objects on the Restrictions Dialog
 		ConfluencePageRestrcitionsObjects confRestrict = new ConfluencePageRestrcitionsObjects(driver);
-		
-		isRestrcitionsDialogVisible = confRestrict.isRestrcitionsDialogOptionsVisible();
-		
-		if (isRestrcitionsDialogVisible == false) {
+
+		isRestrcitionDialogOptionsVisible = confRestrict.isRestrcitionsDialogOptionsVisible();
+
+		if (isRestrcitionDialogOptionsVisible == false) {
 			Assert.fail("The Restrcitions Dialog did not opened for this user");
 		}
 		else
@@ -102,15 +108,15 @@ public class TestConfluencePageWorkflows {
 			// We will be verifying this by verifying the presence of the Edit Button and the Page Title
 			confPopulated.isEditConfluencerPageButtonVisible();
 			String pageTitleOnRestrictionDialogClosed = confPopulated.getPageTitle();
-			
+
 			if (!pageTitleOnRestrictionDialogClosed.equals(Configs.getExistingPageTitle()))
 			{
 				Assert.fail("Either the Restrictions Dialog is not closed , or there is an issue navigating to the page");
 			}						
 		}
-		
+
 		driver.close();
-	
+
 	}
 
 }

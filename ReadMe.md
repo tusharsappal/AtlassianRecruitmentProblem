@@ -20,6 +20,7 @@
 1. The Dialogs should be opened within 15 minutes, since we have set the explicit timeout to be 15 seconds
 2. The Page opened should be rendered within 15 minutes , since we have set the explicit timeout to be 15 seconds
 3. The options , menus and the pages should be opened using a single click , logic for trying opening the page with the multiple attempts is not written
+4. Assumptions for the Checking the *Restriction Workflow*:---- If the user is able to open the Restriction dialog , the user would be able to change the Restrictions around the page
 
 ####Steps for Running the TestCases in Eclipse
 
