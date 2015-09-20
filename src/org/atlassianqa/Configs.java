@@ -6,6 +6,7 @@ public class Configs {
 	public static String USERNAME = "sappal.tushar@gmail.com";
 	private static String PASSWORD = "Accompany123";
 	private static String LOGINPAGE_TITLE = "Atlassian Cloud";
+	private static String HOMEPAGE_TITLE = "Dashboard - Confluence";
 
 
 	public static String getPASSWORD() {
@@ -38,4 +39,7 @@ public class Configs {
 		return LOGINPAGE_TITLE;
 	}
 
+	public static String getHOMEPAGETITLE() {
+		return HOMEPAGE_TITLE;
+	}
 }
