@@ -23,4 +23,4 @@
 
 ####Contributors
 
-1. Tushar Sappal
+1. Tushar Sappal (sappal.tushar@gmail.com)
