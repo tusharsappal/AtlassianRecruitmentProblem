@@ -31,7 +31,7 @@ public class ConfluenceTests {
 		 * The Second check would be to actually verify that the Page has been created , by checking its 
 		 * presence in the list of the pages listed  
 		 */
-		confluenceHomePage.createPage();
+		confluenceHomePage.clickOnCreateButton();
 
 	}
 

@@ -28,7 +28,7 @@ public class ConflueneceHomePageObjects {
 	@FindBy(id="quick-create-page-button")
 	private WebElement quickCreateButton;
 
-	public void createPage() {
+	public void clickOnCreateButton() {
 		quickCreateButton.click();
 	}
 }

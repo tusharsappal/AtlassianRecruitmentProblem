@@ -7,6 +7,7 @@ public class Configs {
 	private static String PASSWORD = "Accompany123";
 	private static String LOGINPAGE_TITLE = "Atlassian Cloud";
 	private static String HOMEPAGE_TITLE = "Dashboard - Confluence";
+	private static String NEWPAGE_TITLE = "Add Page - TestSpace - Confluence";
 
 
 	public static String getPASSWORD() {
@@ -41,5 +42,10 @@ public class Configs {
 
 	public static String getHOMEPAGETITLE() {
 		return HOMEPAGE_TITLE;
+	}
+	
+	public static String getNEWPAGETITLE() {
+		return NEWPAGE_TITLE;
+		
 	}
 }
