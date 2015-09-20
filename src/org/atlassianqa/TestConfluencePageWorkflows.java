@@ -1,11 +1,9 @@
 package org.atlassianqa;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import static org.junit.Assert.*;
-
-import org.junit.Assert;
 
 public class TestConfluencePageWorkflows {
 
@@ -100,11 +98,18 @@ public class TestConfluencePageWorkflows {
 		else
 		{
 			confRestrict.closeRestrictionDialog();
-			// We will verify that we land to the page itself after the restrcitions dialog is closed
-			// We will be verifyig this by verifying the presence of the Edit Button and the Page Title
+			// We will verify that we land to the page itself after the restrictions dialog is closed
+			// We will be verifying this by verifying the presence of the Edit Button and the Page Title
 			confPopulated.isEditConfluencerPageButtonVisible();
+			String pageTitleOnRestrictionDialogClosed = confPopulated.getPageTitle();
 			
+			if (!pageTitleOnRestrictionDialogClosed.equals(Configs.getExistingPageTitle()))
+			{
+				Assert.fail("Either the Restrictions Dialog is not closed , or there is an issue navigating to the page");
+			}						
 		}
+		
+		driver.close();
 	
 	}
 
