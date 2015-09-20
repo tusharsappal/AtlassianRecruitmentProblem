@@ -1,5 +1,7 @@
 package org.atlassianqa;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,17 +33,24 @@ public class ConfluenceNewPageObjects {
 		boolean isPageCreated = false;
 		blankPageTitleTextField.sendKeys(pageTitle);
 		saveButton.click();
-		// We will check if we are redirected to the DashBoard
-		// This signifies that we have successfully created the Page
-		if (!"Dashboard - Confluence".equals(driver.getTitle())) {
-			// Alternatively, we could navigate to the login page, perhaps logging out first
+		
+		// TestSpace is our sample Test Space on the confulence Cloud
+		String webPageTitle = pageTitle+" - TestSpace - Confluence";
+		
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+		
+		if (!webPageTitle.equals(driver.getTitle())) {
 			isPageCreated = false;
-			throw new IllegalStateException("This is not the login page");
+			
+			System.out.println("Expected title is "+ webPageTitle);
+			System.out.println("Actual title is "+ driver.getTitle());
+			
+			throw new IllegalStateException("The Page has not been created successfully ");
 		}
-		// Else if we have landed to the Dashboard Page , we have successfully created the Page
 		else {
-			isPageCreated = true;
+		isPageCreated = true;
 		}
+		
 		return isPageCreated;
 	}
 

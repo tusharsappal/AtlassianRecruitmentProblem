@@ -31,4 +31,8 @@ public class ConflueneceHomePageObjects {
 	public void clickOnCreateButton() {
 		quickCreateButton.click();
 	}
+	
+	public boolean isCreateButtonVisible() {
+		return quickCreateButton.isDisplayed();
+	}
 }
