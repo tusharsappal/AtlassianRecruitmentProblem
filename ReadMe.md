@@ -21,6 +21,10 @@
 2. The Page opened should be rendered within 15 minutes , since we have set the explicit timeout to be 15 seconds
 3. The options , menus and the pages should be opened using a single click , logic for trying opening the page with the multiple attempts is not written
 
+####Steps for Running the TestCases
+
+The TestRunner.java is the main driving class for the test cases to run, Please make sure that you have included all the test cases under the TestConfluencePageWorkflows in the run configurations
+
 ####Contributors
 
 1. Tushar Sappal (sappal.tushar@gmail.com)
