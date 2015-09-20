@@ -1,13 +1,17 @@
 package org.atlassianqa;
 
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.atlassianqa.Configs;
+import static org.junit.Assert.*;
 
-public class ConfluenceTests {
+import org.junit.Assert;
 
-	public static void main(String[] args) {
-
+public class TestNewConfluencePageCreationWorkflow {
+	
+	@Test
+	public void testNewConfluenecePageCreation() {
+		
 		boolean isNewPageCreated = false;
 		// Initializing the WebDriver 
 		WebDriver driver = new FirefoxDriver();
@@ -39,16 +43,8 @@ public class ConfluenceTests {
 		isNewPageCreated = newPage.createNewPage(Configs.getNewPageTitle());
 		
 		// Checking if the new page is created or not 
-		
-		if (isNewPageCreated == true)
-		{
-			System.out.println("The New Page Creation Test Case has Passed");			
-		}
-		else
-		{
-			System.out.println("The New Page Creation Test has failed");
-		}
+		Assert.assertTrue(isNewPageCreated);
 		
 	}
-
+	
 }
