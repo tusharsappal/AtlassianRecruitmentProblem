@@ -27,6 +27,10 @@ public class ConflueneceHomePageObjects {
 	// Grabbing the Quick Create Button
 	@FindBy(id="quick-create-page-button")
 	private WebElement quickCreateButton;
+	
+	// Grabbing the Notification Anchor
+	@FindBy(id="notifications-anchor")
+	private WebElement notificationButton;
 
 	public void clickOnCreateButton() {
 		quickCreateButton.click();
@@ -34,5 +38,9 @@ public class ConflueneceHomePageObjects {
 	
 	public boolean isCreateButtonVisible() {
 		return quickCreateButton.isDisplayed();
+	}
+	
+	public boolean isNotificationButtonVisisble() {
+		return notificationButton.isDisplayed();
 	}
 }
