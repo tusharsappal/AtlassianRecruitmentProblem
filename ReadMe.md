@@ -18,10 +18,15 @@
 ####Assumptions
 
 1. The Dialogs should be opened within 15 seconds, since we have set the explicit timeout to be 15 seconds
+
 2. The Page opened should be rendered within 15 seconds , since we have set the explicit timeout to be 15 seconds
+
 3. The options , menus and the pages should be opened using a single click , logic for trying opening the page with the multiple attempts is not written
+
 4. Assumptions for the Checking the *Restriction Workflow*:---- If the user is able to open the Restriction dialog , the user would be able to change the Restrictions around the page
-5.If the Notifications Icon is visible we are assuming that the user is logged in and only then the Notification Icon is visible to the user.
+
+5. If the Notifications Icon is visible we are assuming that the user is logged in and only then the Notification Icon is visible to the user.
+
 
 ####Steps for Running the TestCases in Eclipse
 
