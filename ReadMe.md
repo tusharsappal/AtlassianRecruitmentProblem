@@ -6,6 +6,8 @@
 2. The Second Automated Test Case determines if the user can put restrictions on the existing wiki page
 
 
+#### The Mindset Exercise and the  Exploratory Testing Exercise PDF files are also present in the repo.
+
 ####Prerequisites
 
 1. An account on Confluence
